@@ -3,46 +3,46 @@ package main
 import "fmt"
 
 func main() {
-	// Проинициализированная карта возрастов пациентов
-	patients := map[string]int{
-		"oleg":     76,
-		"pavel":    81,
-		"grisha":   99,
-		"sasha":    23,
-		"andrey":   33,
-		"tanya":    45,
-		"zaya":     22,
-		"tolik":    18,
-		"kostya":   99,
-		"shantsun": 101,
-		"lesha":    11,
-		"sam":      4,
-		"valya":    77,
+	// Общее количество фруктов
+	fruit := map[string]int{
+		"Apple":             76,
+		"orange":            81,
+		"banana":            99,
+		"yellow apple":      23,
+		"Green appel":       33,
+		"red appel":         45,
+		"mango":             22,
+		"melon":             18,
+		"green mellon":      99,
+		"beg mellon":        101,
+		"tangerines":        11,
+		"Chaina tangerines": 4,
+		"small tangerines":  77,
 	}
-	// флаг о первоначальной инициализации минимального возраста
-	flagMinInit := false
+	// Минимальный остаток
+	MinimumBalans := false
 
 	// минимальное значение
 	var min int
 
-	// имя (ключ) самого молодого пациента
-	var youngestPatientName string
+	// Наименование (ключ) минимального остатка фрукта
+	var MinimumAmountFruit string
 
-	// начинаем обход пациентов
-	for name, age := range patients {
+	// Приступик к взвешиванию
+	for title, weight := range fruit {
 		// устанавливаем минимальное значение
-		if !flagMinInit {
-			flagMinInit = true
-			min = age
-			youngestPatientName = name
+		if !MinimumBalans {
+			MinimumBalans = true
+			min = weight
+			MinimumAmountFruit = title
 		}
 
-		// выявляем самого молодого из пациентов
-		if age < min {
-			min = age
-			youngestPatientName = name
+		// Определяем минимальный остаток
+		if weight < min {
+			min = weight
+			MinimumAmountFruit = title
 		}
 	}
 
-	fmt.Println("Youngest Patient is ", youngestPatientName, " aged ", patients[youngestPatientName])
+	fmt.Println("Minimum amaunt ", MinimumBalans, " title ", fruit[MinimumAmountFruit])
 }
